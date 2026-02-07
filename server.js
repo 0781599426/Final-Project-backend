@@ -10,11 +10,10 @@ const bcrypt = require("bcrypt");
 const flash = require("connect-flash");
 const i18n = require("i18n");
 const cookieParser = require("cookie-parser");
-const translate = require("google-translate-api-x");
 
 dotenv.config();
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const httpsAgent = new https.Agent({
   rejectUnauthorized: false,
@@ -32,7 +31,7 @@ app.set("views", path.join(__dirname, "views"));
 // Session Setup
 app.use(
   session({
-    secret: "your_secret_key",
+    secret: process.env.SESSION_SECRET || "your_secret_key_change_this",
     resave: false,
     saveUninitialized: true,
   })

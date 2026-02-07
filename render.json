@@ -1,0 +1,23 @@
+{
+  "services": [
+    {
+      "key": "web",
+      "type": "web",
+      "plan": "free",
+      "name": "z-coding-backend",
+      "runtime": "node",
+      "buildCommand": "npm install",
+      "startCommand": "node server.js",
+      "envVars": [
+        {
+          "key": "MONGODB_URI",
+          "scope": "build"
+        },
+        {
+          "key": "NEWS_API_KEY",
+          "scope": "build"
+        }
+      ]
+    }
+  ]
+}
