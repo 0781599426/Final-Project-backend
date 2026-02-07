@@ -1,0 +1,11 @@
+node_modules/
+.env
+.env.local
+.env.*
+package-lock.json
+npm-debug.log
+.idea/
+desktop.ini
+dist/
+.DS_Store
+.vercel/
